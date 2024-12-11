@@ -1,0 +1,25 @@
+<div class="container color-dark">
+    <div class="container color-light">
+      <div class="col">
+        <!-- Titre avec nombre d'éléments -->
+        <p class="life-container">Un nouvel élément de liste ({{ nbItems }})</p>
+        
+        <!-- Formulaire -->
+        <form>
+          <!-- Champ de texte avec double liaison -->
+          <input type="text" class="txt" placeholder="mon nouveau objectif" [(ngModel)]="objectifText">
+          <!-- Bouton avec texte dynamique -->
+          <input type="button" [value]="btnText" class="btn" (click)="ajoutItem()" >
+        </form>
+        
+        <!-- Affichage dynamique de la variable (texte saisi) -->
+        <p>{{ objectifText }}</p>
+  
+        <!-- Affichage des éléments du tableau objectifs -->
+        <div *ngFor="let element of objectifs">
+          <p class="life-container">{{ element }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
