@@ -4,7 +4,7 @@
         <p class="life-container">Un nouvel élément de liste ({{ nbItems }})</p>
         
         <input type="text" class="txt" placeholder="mon nouveau objectif" [(ngModel)]="objectifText">
-        <button type="button" [value]="btnText" class="btn" (click)="ajoutItem()" > {{btnText}} </button>
+        <input type="submit" class="btn" (click)="ajoutItem()" [ngClass]="getExpliciteClass()" > 
         
         <p>{{ objectifText }}</p>
   

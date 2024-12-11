@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // Importer FormsModule
 import { CommonModule } from '@angular/common'; // Import du CommonModule
 import { animate, keyframes, query, stagger, style, transition, trigger } from '@angular/animations';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -21,6 +22,11 @@ import { animate, keyframes, query, stagger, style, transition, trigger } from '
 
 })
 export class HomeComponent {
+
+  constructor(private monRouter: Router){
+    
+  }
+
   nbItems = 0 ; 
   btnText: string = 'Ajouter un élément';
   objectifText : string ='';
@@ -36,5 +42,14 @@ export class HomeComponent {
       this.nbItems = this.objectifs.length; // Mettre à jour le compteur
       this.objectifText = ''; // Réinitialiser le champ
     
+  }
+
+  getExpliciteClass(){
+    if(this.objectifText == "..." || this.objectifText == ""){
+      return 'btn'
+    } else {
+      return 'btnok'
+
+    }
   }
 }
